@@ -1,0 +1,9 @@
+{
+  "name": "potlucky",
+  "version": "0.0.1",
+  "description": "A potluck planning app",
+  "main": "index.js",
+  "repository": "https://github.com/sirctseb/potlucky",
+  "author": "Christopher Best <bestchris@gmail.com>",
+  "license": "MIT"
+}
