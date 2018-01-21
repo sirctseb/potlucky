@@ -16,7 +16,7 @@ class AddNeed extends Component {
         return (
             <form className='add-need'
                 onSubmit={this.props.handleSubmit(this.submitThenReset)}>
-                <h3 className='add-need__title'>What do you need?</h3>
+                <h2 className='add-need__title'>What do you need?</h2>
                 <div className='add-need__inputs'>
                     <Field name='name'
                         component={InconspicuousInput}
