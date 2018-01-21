@@ -8,14 +8,16 @@ class Needs extends Component {
         return (
             <div className='needs'>
                 <div className='needs__title'>What we need</div>
-                {
-                    map(get(this.props.potluck, 'needs'), (value, key) =>
-                        !value.brought &&
-                        <Need {...this.props}
-                            key={key}
-                            need={value}
-                            needKey={key} />)
-                }
+                <div className='needs__need-list'>
+                    {
+                        map(get(this.props.potluck, 'needs'), (value, key) =>
+                            !value.brought &&
+                            <Need {...this.props}
+                                key={key}
+                                need={value}
+                                needKey={key} />)
+                    }
+                </div>
             </div>
         );
     }

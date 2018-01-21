@@ -11,7 +11,7 @@ class Need extends Component {
         return (
             <div className='need'>
                 {need.name}
-                <div className='need__bring'
+                <div className='need__button'
                     title={'I\'ll bring this!'}
                     onClick={() => {
                         update(path, {
@@ -25,12 +25,18 @@ class Need extends Component {
                     }}>
                     o
                 </div>
-                <div className='need__delete'
+                <div className='need__elaboration'>
+                    I'll bring this!
+                </div>
+                <div className='need__button'
                     title={'Nevermind, we don\'t need this'}
                     onClick={() => {
                         remove(`${path}/needs/${key}`);
                     }}>
                     x
+                </div>
+                <div className='need__elaboration'>
+                    Nevermind, we don't need this
                 </div>
             </div>
         );

@@ -3,5 +3,32 @@ $block-class: 'need';
 @at-root {
     .#{$block-class} {
         display: flex;
+        align-items: center;
+        position: relative;
+        border: 1px solid $brand-background-color-pale;
+        border-radius: 1px;
+        padding: 2px 6px;
+        margin-right: 4px;
+
+        &__button {
+            padding-left: 4px;
+            cursor: pointer;
+
+            &:hover + .#{$block-class}__elaboration {
+                display: block;
+            }
+        }
+
+        &__elaboration {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -1px;
+            overflow: visible;
+            white-space: nowrap;
+            background-color: $brand-background-color;
+            border: 1px solid $brand-background-color-pale;
+            padding: 2px 6px;
+        }
     }
 }
