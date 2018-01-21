@@ -21,7 +21,8 @@ class Potluck extends Component {
         const { update, set } = this.props.firebase;
         return (
             <div className='potluck'>
-                <input type='text'
+                <input className='potluck__name-input'
+                    type='text'
                     value={get(this.props.potluck, 'name', '')}
                     onChange={ evt => set(`${path}/name`, evt.target.value) }/>
                 <AddNeed onSubmit={(values) => {
