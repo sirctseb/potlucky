@@ -6,14 +6,18 @@ class Host extends Component {
         const { path, firebase: { push } } = this.props;
         return (
             <div className='host'>
-                <h2>Are you the host? <span className='host__is-host-button'
-                    onClick={() => this.props.actions.setIsHost(!this.props.ui.isHost)}>
-                    {
-                        this.props.ui.isHost ?
-                            'No -' :
-                            'Yes +'
-                    }
-                </span>
+                <h2>I am
+                    <span className={`host__role-button ${this.props.ui.isHost && 'host__role-button--active'}`}
+                        onClick={() => this.props.actions.setIsHost(true)}>
+                        the host
+                    </span>
+                    <span className='host__role-divider'>
+                        /
+                    </span>
+                    <span className={`host__role-button ${!this.props.ui.isHost && 'host__role-button--active'}`}
+                        onClick={() => this.props.actions.setIsHost(false)}>
+                        a guest
+                    </span>
                 </h2>
                 {
                     this.props.ui.isHost &&

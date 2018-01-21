@@ -1,0 +1,20 @@
+$block-class: 'host';
+
+@at-root {
+    .#{$block-class} {
+        &__role-button {
+            color: darken($brand-background-color, 15%);
+            margin-left: 8px;
+            cursor: pointer;
+
+            &--active {
+                color: black;
+                cursor: text;
+            }
+        }
+
+        &__role-divider {
+            margin-left: 8px;
+        }
+    }
+}
