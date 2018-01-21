@@ -3,5 +3,10 @@ $block-class: 'bringing';
 @at-root {
     .#{$block-class} {
         display: flex;
+
+        &__name,
+        &__nevermind {
+            margin-left: 4px;
+        }
     }
 }

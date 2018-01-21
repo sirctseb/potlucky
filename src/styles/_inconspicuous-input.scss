@@ -8,6 +8,10 @@ $block-class: 'inconspicuous-input';
         background-color: $brand-background-color;
         border-radius: 1px;
 
+        &[value=''] {
+            border-bottom: 1px solid black;
+        }
+
         &:focus {
             background-color: $brand-background-color-pale;
         }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import InconspicuousInput from './InconspicuousInput';
+
 class Bringing extends Component {
     render() {
         const {
@@ -7,17 +9,16 @@ class Bringing extends Component {
         } = this.props;
         return (
             <div className='bringing'>
-                <input className='bringings__input'
-                    type='text'
+                <InconspicuousInput className='bringing__input'
                     value={bringing.bringer}
                     onChange={ evt => set(
                         `${path}/bringings/${bringingKey}/bringer`,
                         evt.target.value,
                     ) }/>
-                <div className='bringings__name'>
+                <div className='bringing__name'>
                     {bringing.name}
                 </div>
-                <button className='bringings__nevermind'
+                <button className='bringing__nevermind'
                     onClick={() => {
                         update(path, {
                             [`needs/${bringing.neededKey}/brought`]: null,
