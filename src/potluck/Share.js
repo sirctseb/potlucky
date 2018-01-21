@@ -50,6 +50,13 @@ class Share extends Component {
                             onBlur={() => this.props.actions.setLinkCopied(false)}
                             readOnly
                             value={document.location.href} />
+                        <div className='share__copy-indicator'>
+                            {
+                                this.props.linkIsCopied ?
+                                    '(link copied)' :
+                                    '(copy the link above and send to your guests!)'
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

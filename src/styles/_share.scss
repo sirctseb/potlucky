@@ -17,6 +17,7 @@ $block-class: 'share';
         &__copy-link {
             display: flex;
             font-size: 14px;
+            position: relative;
         }
 
         &__copy-button {
@@ -40,8 +41,20 @@ $block-class: 'share';
             font: inherit;
 
             &:focus {
-                width: 320px;
+                width: 256px;
+
+                & + .#{$block-class}__copy-indicator {
+                    display: block;
+                }
             }
+        }
+
+        &__copy-indicator {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            overflow: nowrap;
+            display: none;
         }
     }
 }
