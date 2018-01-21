@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
-import { get } from 'lodash';
+import { get, map } from 'lodash';
 
 import AddNeed from './AddNeed';
 
@@ -34,6 +34,13 @@ class Potluck extends Component {
                         values,
                     );
                 }}/>
+                {
+                    map(get(this.props.potluck, 'needs'), (value, key) =>
+                        <div key={key}
+                            className='potluck__need'>
+                            {value.name}
+                        </div>)
+                }
             </div>
         );
     }
