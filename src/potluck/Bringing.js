@@ -14,7 +14,8 @@ class Bringing extends Component {
                     onChange={ evt => set(
                         `${path}/bringings/${bringingKey}/bringer`,
                         evt.target.value,
-                    ) }/>
+                    ) }
+                    placeholder={'Who\'s bringing this?'} />
                 <div className='bringing__name'>
                     {bringing.name}
                 </div>

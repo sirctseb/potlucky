@@ -4,6 +4,12 @@ $block-class: 'bringing';
     .#{$block-class} {
         display: flex;
 
+        &__input {
+            &::placeholder {
+                color: darken($brand-background-color, 20%);
+            }
+        }
+
         &__name,
         &__nevermind {
             margin-left: 4px;
