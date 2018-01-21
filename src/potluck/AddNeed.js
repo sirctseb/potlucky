@@ -5,7 +5,10 @@ class AddNeed extends Component {
     render() {
         return (
             <form className='add-need'
-                onSubmit={this.props.handleSubmit}>
+                onSubmit={this.props.handleSubmit((values) => {
+                    this.props.onSubmit(values);
+                    this.props.reset();
+                })}>
                 <Field name='name'
                     component={'input'}/>
                 <button type='submit'>

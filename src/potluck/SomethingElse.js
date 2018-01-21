@@ -5,7 +5,10 @@ class SomethingElse extends Component {
     render() {
         return (
             <form className='something-else'
-                onSubmit={this.props.handleSubmit}>
+                onSubmit={this.props.handleSubmit((values) => {
+                    this.props.onSubmit(values);
+                    this.props.reset();
+                })}>
                 <label>Bring something else:
                     <Field name='name'
                         component={'input'}/>
