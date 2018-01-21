@@ -10,6 +10,7 @@ $block-class: 'footer';
         position: absolute;
         bottom: 0;
         background-color: $brand-secondary;
-        width: 100%;
+        width: calc(100% - 16px);
+        padding: 0 8px;
     }
 }

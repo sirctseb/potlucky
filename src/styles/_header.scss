@@ -14,24 +14,33 @@ $block-class: 'header';
 
         &__create-potluck {
             width: 80px;
-            position: absolute;
-            left: 10%;
+            height: 80px;
+            display: flex;
+            position: relative;
+            margin-right: 10px;
+            top: -10px;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: rotate(20deg);
+            }
         }
 
-        &__pot-icon {
+        &__pot-icon,
+        &__plus-icon {
+            position: absolute;
+
             path {
                 fill: $brand-secondary;
             }
         }
 
-        @include on-small {
-            flex-direction: column;
-            align-items: center;
-
-            &__create-potluck {
-                position: static;
-            }
+        &__plus-icon {
+            width: 20px;
+            top: 50px;
         }
     }
 }
