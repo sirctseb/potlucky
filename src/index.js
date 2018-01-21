@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 import firebase from 'firebase';
 
 import routes from './routes';
@@ -24,6 +25,7 @@ const store = createStore(
     combineReducers({
         firebase: firebaseStateReducer,
         routing: routerReducer,
+        form: formReducer,
     }),
     reactReduxFirebase(firebase),
 );
