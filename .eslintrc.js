@@ -5,6 +5,9 @@ module.exports = {
         "react",
         "babel"
     ],
+    "rules": {
+      "indent": ["error", 4]
+    },
     "parserOptions": {
         "sourceType": "module",
         "ecmaFeatures": {
