@@ -3,6 +3,7 @@ import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase';
+import firebase from 'firebase';
 
 import App from './App';
 
@@ -15,11 +16,13 @@ const firebaseConfig = {
     messagingSenderId: '83393501900',
 };
 
+firebase.initializeApp(firebaseConfig);
+
 const store = createStore(
     combineReducers({
         firebase: firebaseStateReducer,
     }),
-    reactReduxFirebase(firebaseConfig),
+    reactReduxFirebase(firebase),
 );
 
 ReactDOM.render(
