@@ -5,5 +5,16 @@ path / {
     write() {
         return true;
     }
+
+    path /potlucks is Potlucky[];
 }
 
+type Potlucky {
+    name: String,
+    bringings: Bringing[] | Null,
+}
+
+type Bringing {
+    bringer: String | Null,
+    name: String
+}
