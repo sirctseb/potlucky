@@ -1,0 +1,17 @@
+$block-class: 'share';
+
+@at-root {
+    .#{$block-class} {
+        &--hidden {
+            display: none;
+        }
+
+        &__button-panel {
+            display: flex;
+
+            & > * {
+                margin-right: 8px;
+            }
+        }
+    }
+}

@@ -10,6 +10,7 @@ import Host from './Host';
 import Bringings from './Bringings';
 import SomethingElse from './SomethingElse';
 import InconspicuousInput from './InconspicuousInput';
+import Share from './Share';
 
 const enhance = compose(
     firebaseConnect(props => ([
@@ -44,6 +45,7 @@ class Potluck extends Component {
                         push(`${path}/bringings`, values);
                     }} />
                 }
+                <Share hidden={!this.props.ui.isHost}/>
             </div>
         );
     }
