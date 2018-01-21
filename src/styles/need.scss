@@ -1,0 +1,7 @@
+$block-class: 'need';
+
+@at-root {
+    .#{$block-class} {
+        display: flex;
+    }
+}

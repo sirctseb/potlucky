@@ -1,0 +1,9 @@
+$block-class: 'needs';
+
+@at-root {
+    .#{$block-class} {
+        &__title {
+            font-size: 24px;
+        }
+    }
+}
