@@ -8,6 +8,7 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import firebase from 'firebase';
 
 import App from './App';
+import Potluck from './Potluck';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCtUN0dVdhGZuG6TyrzGJWas4jsQI5ujas',
@@ -33,7 +34,9 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path='/' component={App} />
+            <Route path='/' component={App}>
+                <Route path=':potluckId' component={Potluck} />
+            </Route>
         </Router>
     </Provider>,
     document.getElementById('root'),

@@ -11,6 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
     devServer: {
         port: 7000,
+        historyApiFallback: true,
     },
     devtool: 'cheap-module-eval-source-map',
     entry: './src/index.js',
