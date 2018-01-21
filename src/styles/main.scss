@@ -1,7 +1,5 @@
-@import './app';
-@import './potluck';
-
 $brand-background-color: #fec601;
+$brand-background-color-pale: #feeaa2;
 $brand-primary: #73bfb8;
 $brand-secondary: #ea7317;
 
@@ -12,3 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+@import './app';
+@import './header';
+@import './potluck';
