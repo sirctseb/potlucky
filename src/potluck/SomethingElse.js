@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+import InconspicuousInput from './InconspicuousInput';
+
 class SomethingElse extends Component {
     render() {
         return (
@@ -9,13 +11,23 @@ class SomethingElse extends Component {
                     this.props.onSubmit(values);
                     this.props.reset();
                 })}>
-                <label>Bring something else:
-                    <Field name='name'
-                        component={'input'}/>
-                </label>
-                <button type='submit'>
+                <Field name='bringer'
+                    component={InconspicuousInput}
+                    input={{
+                        placeholder: 'Who are you?',
+                    }} />
+                <Field name='name'
+                    component={InconspicuousInput}
+                    input={{
+                        placeholder: 'What are you bringing?',
+                    }}/>
+                <div type='submit'
+                    onClick={this.props.handleSubmit((values) => {
+                        this.props.onSubmit(values);
+                        this.props.reset();
+                    })}>
                     bring this
-                </button>
+                </div>
             </form>
         );
     }

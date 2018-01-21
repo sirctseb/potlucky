@@ -1,0 +1,7 @@
+$block-class: 'something-else';
+
+@at-root {
+    .#{$block-class} {
+        display: flex;
+    }
+}
