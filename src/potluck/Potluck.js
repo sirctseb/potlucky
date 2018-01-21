@@ -34,14 +34,15 @@ class Potluck extends Component {
             <div className='potluck'>
                 <InconspicuousInput className='potluck__name-input'
                     value={get(this.props.potluck, 'name', '')}
-                    onChange={ evt => set(`${path}/name`, evt.target.value) }/>
+                    onChange={ evt => set(`${path}/name`, evt.target.value) }
+                    placeholder='Event name' />
                 <Host {...this.props} />
                 <Bringings {...this.props} />
                 {
                     !this.props.ui.isHost &&
                     <SomethingElse onSubmit={(values) => {
                         push(`${path}/bringings`, values);
-                    }}/>
+                    }} />
                 }
             </div>
         );
