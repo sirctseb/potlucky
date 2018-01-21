@@ -7,6 +7,7 @@ class Bringings extends Component {
     render() {
         return (
             <div className='bringings'>
+                <h2 className='bringings_title'>What we have</h2>
                 {
                     map(get(this.props.potluck, 'bringings'), (value, key) =>
                         <Bringing key={key}
