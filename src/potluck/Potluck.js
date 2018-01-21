@@ -5,6 +5,7 @@ import { firebaseConnect } from 'react-redux-firebase';
 import { get, map } from 'lodash';
 
 import AddNeed from './AddNeed';
+import SomethingElse from './SomethingElse';
 
 const enhance = compose(
     firebaseConnect(props => ([
@@ -29,6 +30,12 @@ class Potluck extends Component {
                     this.props.firebase.push(
                         `${path}/needs`,
                         values,
+                    );
+                }}/>
+                <SomethingElse onSubmit={(values) => {
+                    this.props.firebase.push(
+                        `${path}/bringings`,
+                        { ...values, bringer: '' },
                     );
                 }}/>
                 {
