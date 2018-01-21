@@ -1,0 +1,7 @@
+$block-class: 'bringing';
+
+@at-root {
+    .#{$block-class} {
+        display: flex;
+    }
+}
