@@ -9,6 +9,10 @@ $block-class: 'inconspicuous-input';
         border-radius: 1px;
         border-bottom: 1px solid darken($brand-background-color, 10%);
 
+        &::placeholder {
+            color: darken($brand-background-color, 20%);
+        }
+
         &:placeholder-shown {
             border-bottom: 1px solid black;
         }

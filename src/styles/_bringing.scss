@@ -5,12 +5,6 @@ $block-class: 'bringing';
         display: flex;
         align-items: flex-start;
 
-        &__input {
-            &::placeholder {
-                color: darken($brand-background-color, 20%);
-            }
-        }
-
         &__name {
             margin-left: 12px;
             white-space: nowrap;
