@@ -10,6 +10,8 @@ import firebase from 'firebase';
 
 import routes from './routes';
 
+import './styles/main.scss';
+
 const firebaseConfig = {
     apiKey: 'AIzaSyCtUN0dVdhGZuG6TyrzGJWas4jsQI5ujas',
     authDomain: 'potlucky-dev.firebaseapp.com',
