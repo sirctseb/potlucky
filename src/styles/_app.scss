@@ -3,13 +3,18 @@ $block-class: 'app';
 @at-root {
     .#{$block-class} {
         background-color: $brand-background-color;
-        width: 60%;
-        padding: 0 10%;
+
+        &__body {
+            padding: 0 10%;
+        }
+
+        width: 80%;
         height: 100%;
+        padding-bottom: 80px;
+        position: relative;
 
         @include on-small {
-            width: 80%;
-            padding: 0 5%;
+            width: 90%;
         }
     }
 }
