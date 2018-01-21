@@ -1,11 +1,12 @@
 import React from 'react';
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
+import { createLogger } from 'redux-logger';
 import firebase from 'firebase';
 
 import routes from './routes';
@@ -29,7 +30,10 @@ const store = createStore(
         routing: routerReducer,
         form: formReducer,
     }),
-    reactReduxFirebase(firebase),
+    compose(
+        applyMiddleware(createLogger()),
+        reactReduxFirebase(firebase),
+    ),
 );
 
 const history = syncHistoryWithStore(browserHistory, store);
