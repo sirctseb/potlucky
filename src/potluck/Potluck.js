@@ -45,7 +45,9 @@ class Potluck extends Component {
                         push(`${path}/bringings`, values);
                     }} />
                 }
-                <Share hidden={!this.props.ui.isHost}/>
+                <Share hidden={!this.props.ui.isHost}
+                    linkIsCopied={this.props.ui.linkCopied}
+                    actions={this.props.actions}/>
             </div>
         );
     }

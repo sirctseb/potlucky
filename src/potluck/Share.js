@@ -38,15 +38,16 @@ class Share extends Component {
                                 window.getSelection().addRange(range);
 
                                 try {
-                                    document.execCommand('copy');
+                                    this.props.actions.setLinkCopied(document.execCommand('copy'));
                                 } catch (err) {
-                                    // TODO
+                                    this.props.actions.setLinkCopied(false);
                                 }
                             }}>
                             Copy link
                         </button>
                         <input href={document.location.href}
                             className='share__copy-input'
+                            onBlur={() => this.props.actions.setLinkCopied(false)}
                             readOnly
                             value={document.location.href} />
                     </div>
