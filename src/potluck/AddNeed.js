@@ -20,7 +20,8 @@ class AddNeed extends Component {
                 <div className='add-need__inputs'>
                     <Field name='name'
                         component={InconspicuousInput}
-                        className='add-need__input' />
+                        className='add-need__input'
+                        placeholder='like, pie or something'/>
                     <div className='add-need__submit'
                         onClick={this.props.handleSubmit(this.submitThenReset)}>
                         +
