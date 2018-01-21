@@ -3,8 +3,7 @@ import { get, map } from 'lodash';
 
 class Needs extends Component {
     render() {
-        const path = `potlucks/${this.props.params.potluckId}`;
-        const { update, remove } = this.props.firebase;
+        const { path, firebase: { update, remove } } = this.props;
         return (
             <div className='needs'>
                 <div className='needs__title'>What we need</div>

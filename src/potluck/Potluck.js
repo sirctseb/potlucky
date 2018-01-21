@@ -14,13 +14,13 @@ const enhance = compose(
     ])),
     connect(({ firebase: { data: { potlucks } } }, props) => ({
         potluck: potlucks && potlucks[props.params.potluckId],
+        path: `potlucks/${props.params.potluckId}`,
     })),
 );
 
 class Potluck extends Component {
     render() {
-        const path = `potlucks/${this.props.params.potluckId}`;
-        const { update, set } = this.props.firebase;
+        const { path, firebase: { update, set } } = this.props;
         return (
             <div className='potluck'>
                 <input className='potluck__name-input'
