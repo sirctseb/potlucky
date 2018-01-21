@@ -20,5 +20,14 @@ $block-class: 'header';
             cursor: pointer;
             border-radius: 0 0 1px 1px;
         }
+
+        @include on-small {
+            flex-direction: column;
+            align-items: center;
+
+            &__create-potluck {
+                position: static;
+            }
+        }
     }
 }

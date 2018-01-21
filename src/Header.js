@@ -10,7 +10,6 @@ class Header extends Component {
     render() {
         return (
             <header className='header'>
-                <h1 className='header__title'>Potlucky</h1>
                 <div className='header__create-potluck'
                     onClick={() => {
                         this.props.firebase.push('potlucks', emptyPotluck)
@@ -18,6 +17,7 @@ class Header extends Component {
                     }}>
                     Create a potluck
                 </div>
+                <h1 className='header__title'>Potlucky</h1>
             </header>
         );
     }

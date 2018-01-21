@@ -18,5 +18,12 @@ $block-class: 'something-else';
         &__submit {
             cursor: pointer;
         }
+
+        @include on-small {
+            &__inputs {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     }
 }

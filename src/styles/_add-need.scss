@@ -5,6 +5,11 @@ $block-class: 'add-need';
         display: flex;
         align-items: baseline;
 
+        &__inputs {
+            display: flex;
+            flex-direction: row;
+        }
+
         &__input {
             margin-left: 8px;
         }
@@ -12,6 +17,15 @@ $block-class: 'add-need';
         &__submit {
             margin-left: 4px;
             cursor: pointer;
+        }
+
+        @include on-small {
+            flex-direction: column;
+
+            &__input,
+            &__submit {
+                margin-left: 0;
+            }
         }
     }
 }

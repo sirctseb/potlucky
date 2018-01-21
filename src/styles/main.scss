@@ -3,6 +3,10 @@ $brand-background-color-pale: #feeaa2;
 $brand-primary: #73bfb8;
 $brand-secondary: #ea7317;
 
+@mixin on-small {
+    @media (max-width: 512px) { @content; }
+}
+
 @import './global';
 @import './app';
 @import './header';
