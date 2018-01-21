@@ -27,6 +27,29 @@ class Share extends Component {
                             </a>
                         </div>
                     </div>
+                    <div className='share__copy-link'>
+                        <button className='share__copy-button'
+                            onClick={() => {
+                                const input = document.querySelector('.share__copy-input');
+                                input.focus();
+                                const range = document.createRange();
+                                range.selectNode(input);
+                                window.getSelection().removeAllRanges();
+                                window.getSelection().addRange(range);
+
+                                try {
+                                    document.execCommand('copy');
+                                } catch (err) {
+                                    // TODO
+                                }
+                            }}>
+                            Copy link
+                        </button>
+                        <input href={document.location.href}
+                            className='share__copy-input'
+                            readOnly
+                            value={document.location.href} />
+                    </div>
                 </div>
             </div>
         );

@@ -8,20 +8,25 @@ body {
     margin: 0;
 }
 
-#react-root {
+%font {
     font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+}
+
+#react-root {
+    @extend %font;
+
     background-color: $brand-primary;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
     margin: 0;
-    font-size: 18px;
 }
 
-input {
-    font-family: 'Dosis', sans-serif;
-    font-size: 18px;
+input,
+button {
+    @extend %font;
 }
 
 h2,
