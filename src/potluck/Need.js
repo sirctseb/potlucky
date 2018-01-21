@@ -10,7 +10,6 @@ class Need extends Component {
         } = this.props;
         return (
             <div className='need'>
-                {need.name}
                 <div className='need__button'
                     title={'I\'ll bring this!'}
                     onClick={() => {
@@ -28,6 +27,7 @@ class Need extends Component {
                 <div className='need__elaboration'>
                     I'll bring this!
                 </div>
+                {need.name}
                 <div className='need__button'
                     title={'Nevermind, we don\'t need this'}
                     onClick={() => {
