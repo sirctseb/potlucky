@@ -36,13 +36,13 @@ class Potluck extends Component {
                     value={get(this.props.potluck, 'name', '')}
                     onChange={ evt => set(`${path}/name`, evt.target.value) }/>
                 <Host {...this.props} />
+                <Bringings {...this.props} />
                 <SomethingElse onSubmit={(values) => {
                     this.props.firebase.push(
                         `${path}/bringings`,
                         { ...values, bringer: '' },
                     );
                 }}/>
-                <Bringings {...this.props} />
             </div>
         );
     }
