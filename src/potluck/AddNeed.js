@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+import InconspicuousInput from './InconspicuousInput';
+
 class AddNeed extends Component {
     constructor(props) {
         super(props);
@@ -14,10 +16,10 @@ class AddNeed extends Component {
         return (
             <form className='add-need'
                 onSubmit={this.props.handleSubmit(this.submitThenReset)}>
-                <h2 className='add-need__title'>What do we need?</h2>
+                <h3 className='add-need__title'>What do you need?</h3>
                 <div className='add-need__inputs'>
                     <Field name='name'
-                        component={'input'}/>
+                        component={InconspicuousInput}/>
                     <div className='add-need__submit'
                         onClick={this.props.handleSubmit(this.submitThenReset)}>
                         +
