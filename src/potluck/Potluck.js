@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { compose } from 'redux';
+import { compose, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import { get } from 'lodash';
 
-import AddNeed from './AddNeed';
+import * as actions from './actions';
+
+import Host from './Host';
 import Bringings from './Bringings';
 import SomethingElse from './SomethingElse';
 import InconspicuousInput from './InconspicuousInput';
@@ -13,10 +15,16 @@ const enhance = compose(
     firebaseConnect(props => ([
         `potlucks/${props.params.potluckId}`,
     ])),
-    connect(({ firebase: { data: { potlucks } } }, props) => ({
-        potluck: potlucks && potlucks[props.params.potluckId],
-        path: `potlucks/${props.params.potluckId}`,
-    })),
+    connect(
+        ({ firebase: { data: { potlucks } }, potluck: ui }, props) => ({
+            potluck: potlucks && potlucks[props.params.potluckId],
+            ui,
+            path: `potlucks/${props.params.potluckId}`,
+        }),
+        dispatch => ({
+            actions: bindActionCreators(actions, dispatch),
+        }),
+    ),
 );
 
 class Potluck extends Component {
@@ -27,12 +35,7 @@ class Potluck extends Component {
                 <InconspicuousInput className='potluck__name-input'
                     value={get(this.props.potluck, 'name', '')}
                     onChange={ evt => set(`${path}/name`, evt.target.value) }/>
-                <AddNeed onSubmit={(values) => {
-                    this.props.firebase.push(
-                        `${path}/bringings`,
-                        values,
-                    );
-                }}/>
+                <Host {...this.props} />
                 <SomethingElse onSubmit={(values) => {
                     this.props.firebase.push(
                         `${path}/bringings`,
