@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
+import { get } from 'lodash';
 
 const enhance = compose(
     firebaseConnect(props => ([
@@ -17,16 +18,13 @@ class Potluck extends Component {
         const path = `potlucks/${this.props.params.potluckId}`;
         return (
             <div className='potluck'>
-                <div className='potluck__name'>
-                    { this.props.potluck && this.props.potluck.name }
-                </div>
                 <input type='text'
-                    value={
-                        this.props.potluck ?
-                            this.props.potluck.name :
-                            ''}
+                    value={get(this.props.potluck, 'name', '')}
                     onChange={
-                        evt => this.props.firebase.set(`${path}/name`, evt.target.value)
+                        evt => this.props.firebase.set(
+                            `${path}/name`,
+                            evt.target.value,
+                        )
                     }/>
             </div>
         );
