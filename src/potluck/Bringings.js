@@ -22,11 +22,11 @@ class Bringings extends Component {
                             bringingKey={key} />)
                 }
                 {
-                    get(this.props.potluck, 'bringings.length', 0) === 0 &&
+                    !has(this.props.potluck, 'bringings') &&
                     <div className='bringings__no-dishes'>
                         {
                             this.props.ui.isHost ?
-                                `Add ${has(this.props.potluck, 'bringings') ? 'more' : 'some'} dishes above!` :
+                                'Add some dishes above!' :
                                 'The host hasn\'t requested any dishes yet'
                         }
                     </div>
