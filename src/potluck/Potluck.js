@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
-import { get, map } from 'lodash';
+import { get } from 'lodash';
 
 import AddNeed from './AddNeed';
 import Needs from './Needs';
+import Bringings from './Bringings';
 import SomethingElse from './SomethingElse';
 
 const enhance = compose(
@@ -20,7 +21,7 @@ const enhance = compose(
 
 class Potluck extends Component {
     render() {
-        const { path, firebase: { update, set } } = this.props;
+        const { path, firebase: { set } } = this.props;
         return (
             <div className='potluck'>
                 <input className='potluck__name-input'
@@ -40,31 +41,7 @@ class Potluck extends Component {
                     );
                 }}/>
                 <Needs {...this.props} />
-                {
-                    map(get(this.props.potluck, 'bringings'), (value, key) =>
-                        <div key={key}
-                            className='potluck__bringing'>
-                            <input className='potluck__bringer-input'
-                                type='text'
-                                value={value.bringer}
-                                onChange={ evt => set(
-                                    `${path}/bringings/${key}/bringer`,
-                                    evt.target.value,
-                                ) }/>
-                            <div className='potluck__bringing-name'>
-                                {value.name}
-                            </div>
-                            <button className='potluck__bringing-nevermind'
-                                onClick={() => {
-                                    update(path, {
-                                        [`needs/${value.neededKey}/brought`]: null,
-                                        [`bringings/${key}`]: null,
-                                    });
-                                }}>
-                                Nevermind
-                            </button>
-                        </div>)
-                }
+                <Bringings {...this.props} />
             </div>
         );
     }
