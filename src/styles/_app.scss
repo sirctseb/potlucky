@@ -6,5 +6,10 @@ $block-class: 'app';
         width: 60%;
         padding: 0 10%;
         height: 100%;
+
+        @include on-small {
+            width: 80%;
+            padding: 0 5%;
+        }
     }
 }
