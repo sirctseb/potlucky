@@ -45,10 +45,11 @@ class Share extends Component {
                             }}>
                             Copy link
                         </button>
-                        <input className='share__copy-input'
-                            onBlur={() => this.props.actions.setLinkCopied(false)}
-                            readOnly
-                            value={document.location.href} />
+                        <div className='share__copy-input'
+                            contentEditable
+                            onBlur={() => this.props.actions.setLinkCopied(false)}>
+                            {document.location.href}
+                        </div>
                         <div className='share__copy-indicator'>
                             {
                                 this.props.linkIsCopied ?

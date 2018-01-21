@@ -31,17 +31,19 @@ $block-class: 'share';
         }
 
         &__copy-input {
-            width: 20px;
+            width: 40px;
             height: 28px;
+            line-height: 28px;
             transition: width 0.2s;
             background-color: #ddd;
-            border: none;
-            padding: 0;
+            padding: 0 4px;
             border-radius: 0 4px 4px 0;
-            font: inherit;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
 
             &:focus {
-                width: 256px;
+                width: auto;
 
                 & + .#{$block-class}__copy-indicator {
                     display: block;
@@ -53,7 +55,7 @@ $block-class: 'share';
             position: absolute;
             top: 100%;
             right: 0;
-            overflow: nowrap;
+            white-space: nowrap;
             display: none;
         }
     }
