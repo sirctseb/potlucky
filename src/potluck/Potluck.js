@@ -63,6 +63,15 @@ class Potluck extends Component {
                             <div className='potluck__bringing-name'>
                                 {value.name}
                             </div>
+                            <button className='potluck__bringing-nevermind'
+                                onClick={() => {
+                                    update(path, {
+                                        [`needs/${value.neededKey}/brought`]: null,
+                                        [`bringings/${key}`]: null,
+                                    });
+                                }}>
+                                Nevermind
+                            </button>
                         </div>)
                 }
             </div>
