@@ -8,6 +8,7 @@ import AddNeed from './AddNeed';
 import Needs from './Needs';
 import Bringings from './Bringings';
 import SomethingElse from './SomethingElse';
+import InconspicuousInput from './InconspicuousInput';
 
 const enhance = compose(
     firebaseConnect(props => ([
@@ -24,8 +25,7 @@ class Potluck extends Component {
         const { path, firebase: { set } } = this.props;
         return (
             <div className='potluck'>
-                <input className='potluck__name-input'
-                    type='text'
+                <InconspicuousInput className='potluck__name-input'
                     value={get(this.props.potluck, 'name', '')}
                     onChange={ evt => set(`${path}/name`, evt.target.value) }/>
                 <AddNeed onSubmit={(values) => {

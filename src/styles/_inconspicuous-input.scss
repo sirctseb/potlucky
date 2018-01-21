@@ -1,0 +1,15 @@
+$block-class: 'inconspicuous-input';
+
+@at-root {
+    .#{$block-class} {
+        border: none;
+        outline: none;
+        cursor: text;
+        background-color: $brand-background-color;
+        border-radius: 1px;
+
+        &:focus {
+            background-color: $brand-background-color-pale;
+        }
+    }
+}
