@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import { get } from 'lodash';
 
+import AddNeed from './AddNeed';
+
 const enhance = compose(
     firebaseConnect(props => ([
         `potlucks/${props.params.potluckId}`,
@@ -26,6 +28,12 @@ class Potluck extends Component {
                             evt.target.value,
                         )
                     }/>
+                <AddNeed onSubmit={(values) => {
+                    this.props.firebase.push(
+                        `${path}/needs`,
+                        values,
+                    );
+                }}/>
             </div>
         );
     }
