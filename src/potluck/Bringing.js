@@ -19,15 +19,18 @@ class Bringing extends Component {
                 <div className='bringing__name'>
                     {bringing.name}
                 </div>
-                <div className='bringing__nevermind'
-                    onClick={() => {
-                        update(path, {
-                            [`needs/${bringing.neededKey}/brought`]: null,
-                            [`bringings/${bringingKey}`]: null,
-                        });
-                    }}>
-                    x
-                </div>
+                {
+                    this.props.ui.isHost &&
+                    <div className='bringing__nevermind'
+                        onClick={() => {
+                            update(path, {
+                                [`needs/${bringing.neededKey}/brought`]: null,
+                                [`bringings/${bringingKey}`]: null,
+                            });
+                        }}>
+                        x
+                    </div>
+                }
                 <div className='bringing__nevermind-elaboration'>
                     {
                         bringing.bringer ?
