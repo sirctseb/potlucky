@@ -7,7 +7,7 @@ class Needs extends Component {
     render() {
         return (
             <div className='needs'>
-                <div className='needs__title'>What we need</div>
+                <h2 className='needs__title'>What we need</h2>
                 <div className='needs__need-list'>
                     {
                         map(get(this.props.potluck, 'needs'), (value, key) =>

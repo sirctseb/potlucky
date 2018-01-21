@@ -1,0 +1,15 @@
+$block-class: 'add-need';
+
+@at-root {
+    .#{$block-class} {
+        &__inputs {
+            display: flex;
+            align-items: baseline;
+        }
+
+        &__submit {
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    }
+}

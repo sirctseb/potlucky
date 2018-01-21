@@ -11,8 +11,13 @@ body {
     align-items: center;
 }
 
+h2 {
+    margin-bottom: 0;
+}
+
 @import './app';
 @import './header';
 @import './potluck';
+@import './add-need';
 @import './needs';
 @import './need';
