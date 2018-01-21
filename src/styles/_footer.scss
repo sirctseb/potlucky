@@ -1,0 +1,14 @@
+$block-class: 'footer';
+
+@at-root {
+    .#{$block-class} {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        background-color: $brand-secondary;
+        width: 100%;
+    }
+}
