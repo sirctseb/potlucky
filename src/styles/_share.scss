@@ -18,16 +18,26 @@ $block-class: 'share';
             display: flex;
             font-size: 14px;
             position: relative;
+            align-items: center;
+            background-color: #ddd;
+            border-radius: 4px 0 0 4px;
+            height: 28px;
+        }
+
+        &__copy-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
         }
 
         &__copy-button {
+            display: flex;
             border: none;
-            border-radius: 4px 0 0 4px;
-            background-color: #ddd;
             height: 28px;
-            width: 73px;
             font: inherit;
             font-weight: 700;
+            background-color: #ddd;
+            cursor: pointer;
         }
 
         &__copy-input {
@@ -35,7 +45,6 @@ $block-class: 'share';
             height: 28px;
             line-height: 28px;
             transition: width 0.2s;
-            background-color: #ddd;
             padding: 0 4px;
             border-radius: 0 4px 4px 0;
             overflow-x: hidden;

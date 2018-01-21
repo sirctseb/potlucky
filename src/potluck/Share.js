@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import CopySVG from '../CopySVG';
+
 class Share extends Component {
     render() {
         const tweetText = encodeURIComponent('Sign up for the potluck!');
@@ -43,6 +45,7 @@ class Share extends Component {
                                     this.props.actions.setLinkCopied(false);
                                 }
                             }}>
+                            <CopySVG className='share__copy-icon' />
                             Copy link
                         </button>
                         <div className='share__copy-input'
