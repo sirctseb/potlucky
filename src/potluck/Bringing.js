@@ -19,15 +19,22 @@ class Bringing extends Component {
                 <div className='bringing__name'>
                     {bringing.name}
                 </div>
-                <button className='bringing__nevermind'
+                <div className='bringing__nevermind'
                     onClick={() => {
                         update(path, {
                             [`needs/${bringing.neededKey}/brought`]: null,
                             [`bringings/${bringingKey}`]: null,
                         });
                     }}>
-                    Nevermind
-                </button>
+                    x
+                </div>
+                <div className='bringing__nevermind-elaboration'>
+                    {
+                        bringing.bringer ?
+                            `Nevermind! ${bringing.bringer} is not going to bring this` :
+                            'Nobody is bringing this'
+                    }
+                </div>
             </div>
         );
     }

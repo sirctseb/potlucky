@@ -16,6 +16,19 @@ $block-class: 'bringing';
 
         &__nevermind {
             margin-left: 4px;
+            cursor: pointer;
+
+            &:hover + &-elaboration {
+                display: block;
+            }
+        }
+
+        &__nevermind-elaboration {
+            margin-left: 4px;
+        }
+
+        &__nevermind-elaboration {
+            display: none;
         }
     }
 }
