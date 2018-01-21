@@ -10,7 +10,7 @@ class Bringing extends Component {
         return (
             <div className='bringing'>
                 <InconspicuousInput className='bringing__input'
-                    value={bringing.bringer}
+                    value={bringing.bringer || ''}
                     onChange={ evt => set(
                         `${path}/bringings/${bringingKey}/bringer`,
                         evt.target.value,
