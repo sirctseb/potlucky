@@ -46,5 +46,5 @@ ReactDOM.render(
             {routes}
         </Router>
     </Provider>,
-    document.body,
+    document.getElementById('react-root'),
 );
