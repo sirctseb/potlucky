@@ -1,6 +1,9 @@
-document.addEventListener(
-    'DOMContentLoaded',
-    () => { document.querySelector('#root').innerHTML = 'Hello World'; },
-);
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-export default 'hello';
+import App from './App';
+
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root'),
+);

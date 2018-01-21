@@ -8,6 +8,8 @@ module.exports = {
     "rules": {
         "indent": ["error", 4],
         "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
+        "react/react-in-jsx-scope": 1,
         "class-methods-use-this": [1, {
             "exceptMethods": [
                 "componentDidMount",
@@ -19,7 +21,7 @@ module.exports = {
                 "render",
                 "shouldComponentUpdate",
             ]
-        }]
+        }],
     },
     "parserOptions": {
         "sourceType": "module",
