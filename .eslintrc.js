@@ -6,7 +6,20 @@ module.exports = {
         "babel"
     ],
     "rules": {
-      "indent": ["error", 4]
+        "indent": ["error", 4],
+        "react/jsx-uses-react": 1,
+        "class-methods-use-this": [1, {
+            "exceptMethods": [
+                "componentDidMount",
+                "componentDidUpdate",
+                "componentWillMount",
+                "componentWillReceiveProps",
+                "componentWillUnmount",
+                "componentWillUpdate",
+                "render",
+                "shouldComponentUpdate",
+            ]
+        }]
     },
     "parserOptions": {
         "sourceType": "module",
