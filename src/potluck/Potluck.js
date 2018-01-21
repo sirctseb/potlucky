@@ -38,7 +38,7 @@ class Potluck extends Component {
                             onClick={() => {
                                 update(path, {
                                     [`needs/${key}/brought`]: true,
-                                    [`bringing/${key}`]: {
+                                    [`bringings/${key}`]: {
                                         bringer: '',
                                         neededKey: key,
                                         name: value.name,
