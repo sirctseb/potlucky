@@ -29,7 +29,7 @@ const enhance = compose(
 
 class Potluck extends Component {
     render() {
-        const { path, firebase: { set } } = this.props;
+        const { path, firebase: { set, push } } = this.props;
         return (
             <div className='potluck'>
                 <InconspicuousInput className='potluck__name-input'
@@ -40,10 +40,7 @@ class Potluck extends Component {
                 {
                     !this.props.ui.isHost &&
                     <SomethingElse onSubmit={(values) => {
-                        this.props.firebase.push(
-                            `${path}/bringings`,
-                            { ...values, bringer: '' },
-                        );
+                        push(`${path}/bringings`, values);
                     }}/>
                 }
             </div>
