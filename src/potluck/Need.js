@@ -22,12 +22,11 @@ class Need extends Component {
                             },
                         });
                     }}>
-                    o
+                    {need.name}
                 </div>
                 <div className='need__elaboration'>
                     I'll bring this!
                 </div>
-                {need.name}
                 <div className='need__button'
                     title={'Nevermind, we don\'t need this'}
                     onClick={() => {
