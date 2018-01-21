@@ -32,6 +32,7 @@ class Potluck extends Component {
                 }}/>
                 {
                     map(get(this.props.potluck, 'needs'), (value, key) =>
+                        !value.brought &&
                         <div key={key}
                             className='potluck__need'
                             onClick={() => {
