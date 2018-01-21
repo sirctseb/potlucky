@@ -1,1 +1,13 @@
+@import './app';
 @import './potluck';
+
+$brand-background-color: #fec601;
+$brand-primary: #73bfb8;
+$brand-secondary: #ea7317;
+
+body {
+    background-color: $brand-background-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

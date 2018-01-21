@@ -1,0 +1,7 @@
+$block-class: 'app';
+
+@at-root {
+    .#{$block-class} {
+        width: 60%;
+    }
+}

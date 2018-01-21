@@ -10,6 +10,7 @@ class Header extends Component {
     render() {
         return (
             <header className='header'>
+                <h1 className='title'>Potlucky</h1>
                 <button className='header__create-potluck'
                     onClick={() => {
                         this.props.firebase.push('potlucks', emptyPotluck)
