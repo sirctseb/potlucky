@@ -53,7 +53,16 @@ class Potluck extends Component {
                     map(get(this.props.potluck, 'bringings'), (value, key) =>
                         <div key={key}
                             className='potluck__bringing'>
-                            {value.bringer} - {value.name}
+                            <input className='potluck__bringer-input'
+                                type='text'
+                                value={value.bringer}
+                                onChange={ evt => set(
+                                    `${path}/bringings/${key}/bringer`,
+                                    evt.target.value,
+                                ) }/>
+                            <div className='potluck__bringing-name'>
+                                {value.name}
+                            </div>
                         </div>)
                 }
             </div>
