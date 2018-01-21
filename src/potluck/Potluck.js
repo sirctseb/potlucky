@@ -5,7 +5,6 @@ import { firebaseConnect } from 'react-redux-firebase';
 import { get } from 'lodash';
 
 import AddNeed from './AddNeed';
-import Needs from './Needs';
 import Bringings from './Bringings';
 import SomethingElse from './SomethingElse';
 import InconspicuousInput from './InconspicuousInput';
@@ -30,7 +29,7 @@ class Potluck extends Component {
                     onChange={ evt => set(`${path}/name`, evt.target.value) }/>
                 <AddNeed onSubmit={(values) => {
                     this.props.firebase.push(
-                        `${path}/needs`,
+                        `${path}/bringings`,
                         values,
                     );
                 }}/>
@@ -40,7 +39,6 @@ class Potluck extends Component {
                         { ...values, bringer: '' },
                     );
                 }}/>
-                <Needs {...this.props} />
                 <Bringings {...this.props} />
             </div>
         );
