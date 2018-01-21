@@ -1,0 +1,9 @@
+$block-class: 'bringings';
+
+@at-root {
+    .#{$block-class} {
+        &__no-dishes {
+            margin-left: 4px;
+        }
+    }
+}

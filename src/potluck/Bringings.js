@@ -21,6 +21,16 @@ class Bringings extends Component {
                             bringing={value}
                             bringingKey={key} />)
                 }
+                {
+                    get(this.props.potluck, 'bringings.length', 0) === 0 &&
+                    <div className='bringings__no-dishes'>
+                        {
+                            this.props.ui.isHost ?
+                                'Add some dishes above!' :
+                                'The host hasn\'t requested any dishes yet'
+                        }
+                    </div>
+                }
             </div>
         );
     }
