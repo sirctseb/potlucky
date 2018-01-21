@@ -3,12 +3,11 @@ import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { reactReduxFirebase, firebaseStateReducer } from 'react-redux-firebase';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import firebase from 'firebase';
 
-import App from './App';
-import Potluck from './Potluck';
+import routes from './routes';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCtUN0dVdhGZuG6TyrzGJWas4jsQI5ujas',
@@ -34,9 +33,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path='/' component={App}>
-                <Route path=':potluckId' component={Potluck} />
-            </Route>
+            {routes}
         </Router>
     </Provider>,
     document.getElementById('root'),
