@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import { firebaseConnect } from 'react-redux-firebase';
 
+import PotSVG from './PotSVG';
+
 const emptyPotluck = {
     name: 'It\'s potluck time!',
 };
@@ -15,7 +17,7 @@ class Header extends Component {
                         this.props.firebase.push('potlucks', emptyPotluck)
                             .then(snapshot => browserHistory.push(`/${snapshot.key}`));
                     }}>
-                    Create a potluck
+                    <PotSVG className='header__pot-icon'/>
                 </div>
                 <h1 className='header__title'>Potlucky</h1>
             </header>

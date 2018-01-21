@@ -4,7 +4,7 @@ $block-class: 'header';
     .#{$block-class} {
         display: flex;
         justify-content: center;
-        align-items: baseline;
+        align-items: center;
         position: relative;
 
         &__title {
@@ -13,12 +13,16 @@ $block-class: 'header';
         }
 
         &__create-potluck {
-            padding: 8px 16px;
-            background-color: $brand-primary;
+            width: 80px;
             position: absolute;
-            right: 0;
+            left: 10%;
             cursor: pointer;
-            border-radius: 0 0 1px 1px;
+        }
+
+        &__pot-icon {
+            path {
+                fill: $brand-secondary;
+            }
         }
 
         @include on-small {
