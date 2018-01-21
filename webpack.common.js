@@ -1,34 +1,23 @@
 const path = require('path');
-
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: './public/index.html',
-    filename: 'index.html',
-    inject: 'body',
-});
-
-const StyleLintPlugin = require('stylelint-webpack-plugin');
-
-const StyleLintPluginConfig = new StyleLintPlugin({
-    config: {
-        extends: 'stylelint-config-standard',
-        rules: {
-            indentation: 4,
-        },
-    },
-});
-
 module.exports = {
-    devServer: {
-        port: 7000,
-        historyApiFallback: true,
+    entry: {
+        app: './src/index.js',
     },
-    devtool: 'cheap-module-eval-source-map',
-    entry: './src/index.js',
+    plugins: [
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+            inject: 'body',
+            title: 'Production',
+        }),
+    ],
     output: {
-        path: path.resolve('dist'),
-        filename: 'index_bundle.js',
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
     module: {
@@ -75,8 +64,4 @@ module.exports = {
             },
         ],
     },
-    plugins: [
-        HtmlWebpackPluginConfig,
-        StyleLintPluginConfig,
-    ],
 };
