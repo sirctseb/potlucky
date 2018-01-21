@@ -15,7 +15,11 @@ class Bringing extends Component {
                         `${path}/bringings/${bringingKey}/bringer`,
                         evt.target.value,
                     ) }
-                    placeholder={'Who\'s bringing this?'} />
+                    placeholder={
+                        this.props.ui.isHost ?
+                            'Who\'s bringing this?' :
+                            'I\'ll bring it!'
+                    } />
                 <div className='bringing__name'>
                     {bringing.name}
                 </div>
