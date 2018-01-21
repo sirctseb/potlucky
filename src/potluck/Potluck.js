@@ -18,16 +18,12 @@ const enhance = compose(
 class Potluck extends Component {
     render() {
         const path = `potlucks/${this.props.params.potluckId}`;
+        const { update, set } = this.props.firebase;
         return (
             <div className='potluck'>
                 <input type='text'
                     value={get(this.props.potluck, 'name', '')}
-                    onChange={
-                        evt => this.props.firebase.set(
-                            `${path}/name`,
-                            evt.target.value,
-                        )
-                    }/>
+                    onChange={ evt => set(`${path}/name`, evt.target.value) }/>
                 <AddNeed onSubmit={(values) => {
                     this.props.firebase.push(
                         `${path}/needs`,
@@ -37,7 +33,17 @@ class Potluck extends Component {
                 {
                     map(get(this.props.potluck, 'needs'), (value, key) =>
                         <div key={key}
-                            className='potluck__need'>
+                            className='potluck__need'
+                            onClick={() => {
+                                update(path, {
+                                    'needs/brought': true,
+                                    [`bringing/${key}`]: {
+                                        bringer: '',
+                                        neededKey: key,
+                                        name: value.name,
+                                    },
+                                });
+                            }}>
                             {value.name}
                         </div>)
                 }
