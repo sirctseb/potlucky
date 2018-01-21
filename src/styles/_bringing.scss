@@ -3,6 +3,7 @@ $block-class: 'bringing';
 @at-root {
     .#{$block-class} {
         display: flex;
+        align-items: flex-start;
 
         &__input {
             &::placeholder {
@@ -12,6 +13,7 @@ $block-class: 'bringing';
 
         &__name {
             margin-left: 12px;
+            white-space: nowrap;
         }
 
         &__nevermind {
