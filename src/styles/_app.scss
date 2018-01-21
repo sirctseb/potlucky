@@ -2,6 +2,9 @@ $block-class: 'app';
 
 @at-root {
     .#{$block-class} {
+        background-color: $brand-background-color;
         width: 60%;
+        padding: 0 10%;
+        height: 100%;
     }
 }
