@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { get, map } from 'lodash';
+import { get, map, has } from 'lodash';
 
 import Bringing from './Bringing';
 
@@ -26,7 +26,7 @@ class Bringings extends Component {
                     <div className='bringings__no-dishes'>
                         {
                             this.props.ui.isHost ?
-                                'Add some dishes above!' :
+                                `Add ${has(this.props.potluck, 'bringings') ? 'more' : 'some'} dishes above!` :
                                 'The host hasn\'t requested any dishes yet'
                         }
                     </div>
