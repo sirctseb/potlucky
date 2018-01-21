@@ -11,13 +11,13 @@ class Header extends Component {
         return (
             <header className='header'>
                 <h1 className='header__title'>Potlucky</h1>
-                <button className='header__create-potluck'
+                <div className='header__create-potluck'
                     onClick={() => {
                         this.props.firebase.push('potlucks', emptyPotluck)
                             .then(snapshot => browserHistory.push(`/${snapshot.key}`));
                     }}>
                     Create a potluck
-                </button>
+                </div>
             </header>
         );
     }
