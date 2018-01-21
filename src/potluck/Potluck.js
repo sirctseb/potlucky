@@ -5,6 +5,7 @@ import { firebaseConnect } from 'react-redux-firebase';
 import { get, map } from 'lodash';
 
 import AddNeed from './AddNeed';
+import Needs from './Needs';
 import SomethingElse from './SomethingElse';
 
 const enhance = compose(
@@ -38,24 +39,7 @@ class Potluck extends Component {
                         { ...values, bringer: '' },
                     );
                 }}/>
-                {
-                    map(get(this.props.potluck, 'needs'), (value, key) =>
-                        !value.brought &&
-                        <div key={key}
-                            className='potluck__need'
-                            onClick={() => {
-                                update(path, {
-                                    [`needs/${key}/brought`]: true,
-                                    [`bringings/${key}`]: {
-                                        bringer: '',
-                                        neededKey: key,
-                                        name: value.name,
-                                    },
-                                });
-                            }}>
-                            {value.name}
-                        </div>)
-                }
+                <Needs {...this.props} />
                 {
                     map(get(this.props.potluck, 'bringings'), (value, key) =>
                         <div key={key}
