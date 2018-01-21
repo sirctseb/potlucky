@@ -10,6 +10,7 @@ import { createLogger } from 'redux-logger';
 import firebase from 'firebase';
 
 import routes from './routes';
+import potluckReducer from './potluck/reducer';
 
 import './styles/main.scss';
 
@@ -29,6 +30,7 @@ const store = createStore(
         firebase: firebaseStateReducer,
         routing: routerReducer,
         form: formReducer,
+        potluck: potluckReducer,
     }),
     compose(
         applyMiddleware(createLogger()),
