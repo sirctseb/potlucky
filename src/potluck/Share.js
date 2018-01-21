@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 import CopySVG from '../CopySVG';
 
 class Share extends Component {
+    componentDidMount() {
+        // eslint-disable-next-line no-undef
+        twttr.widgets.load();
+        // eslint-disable-next-line no-undef, no-unused-expressions
+        FB && FB.XFBML && FB.XFBML.parse();
+    }
     render() {
         const tweetText = encodeURIComponent('Sign up for the potluck!');
         return (
