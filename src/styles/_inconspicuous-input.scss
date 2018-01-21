@@ -8,7 +8,7 @@ $block-class: 'inconspicuous-input';
         background-color: $brand-background-color;
         border-radius: 1px;
 
-        &[value=''] {
+        &:placeholder-shown {
             border-bottom: 1px solid black;
         }
 
