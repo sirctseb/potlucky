@@ -48,6 +48,13 @@ class Potluck extends Component {
                             {value.name}
                         </div>)
                 }
+                {
+                    map(get(this.props.potluck, 'bringings'), (value, key) =>
+                        <div key={key}
+                            className='potluck__bringing'>
+                            {value.bringer} - {value.name}
+                        </div>)
+                }
             </div>
         );
     }
