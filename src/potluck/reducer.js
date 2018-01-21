@@ -6,7 +6,7 @@ const initialState = {
     isHost: false,
 };
 
-export const reducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
     case actionTypes.SET_IS_HOST:
         return update(state, {
