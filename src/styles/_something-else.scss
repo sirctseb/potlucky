@@ -2,6 +2,21 @@ $block-class: 'something-else';
 
 @at-root {
     .#{$block-class} {
-        display: flex;
+        &__inputs {
+            display: flex;
+            align-items: baseline;
+
+            & > * {
+                margin-right: 8px;
+            }
+        }
+
+        &__title {
+            margin: 8px 8px 0 0;
+        }
+
+        &__submit {
+            cursor: pointer;
+        }
     }
 }
