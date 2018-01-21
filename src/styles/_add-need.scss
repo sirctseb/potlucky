@@ -2,9 +2,11 @@ $block-class: 'add-need';
 
 @at-root {
     .#{$block-class} {
-        &__inputs {
-            display: flex;
-            align-items: baseline;
+        display: flex;
+        align-items: baseline;
+
+        &__input {
+            margin-left: 8px;
         }
 
         &__submit {

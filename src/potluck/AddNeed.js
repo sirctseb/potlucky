@@ -17,13 +17,12 @@ class AddNeed extends Component {
             <form className='add-need'
                 onSubmit={this.props.handleSubmit(this.submitThenReset)}>
                 <h3 className='add-need__title'>What do you need?</h3>
-                <div className='add-need__inputs'>
-                    <Field name='name'
-                        component={InconspicuousInput}/>
-                    <div className='add-need__submit'
-                        onClick={this.props.handleSubmit(this.submitThenReset)}>
-                        +
-                    </div>
+                <Field name='name'
+                    component={InconspicuousInput}
+                    className='add-need__input' />
+                <div className='add-need__submit'
+                    onClick={this.props.handleSubmit(this.submitThenReset)}>
+                    +
                 </div>
             </form>
         );
