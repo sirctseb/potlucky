@@ -10,7 +10,10 @@ $block-class: 'bringing';
             }
         }
 
-        &__name,
+        &__name {
+            margin-left: 12px;
+        }
+
         &__nevermind {
             margin-left: 4px;
         }
