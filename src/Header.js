@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { firebaseConnect } from 'react-redux-firebase';
 
 const emptyPotluck = {
@@ -11,7 +12,8 @@ class Header extends Component {
             <header className='header'>
                 <button className='header__create-potluck'
                     onClick={() => {
-                        this.props.firebase.push('potlucks', emptyPotluck);
+                        this.props.firebase.push('potlucks', emptyPotluck)
+                            .then(snapshot => browserHistory.push(`/${snapshot.key}`));
                     }}>
                     Create a potluck
                 </button>
