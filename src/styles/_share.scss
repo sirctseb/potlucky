@@ -38,6 +38,9 @@ $block-class: 'share';
             font-weight: 700;
             background-color: #ddd;
             cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &__copy-input {
