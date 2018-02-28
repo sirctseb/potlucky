@@ -26,7 +26,7 @@ class Bringings extends Component {
                     <div className='bringings__no-dishes'>
                         {
                             this.props.ui.isHost ?
-                                'Add some dishes above!' :
+                                'Add some dishes above \u2934' :
                                 'The host hasn\'t requested any dishes yet'
                         }
                     </div>
