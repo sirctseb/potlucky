@@ -15,32 +15,8 @@ $block-class: 'header';
         &__create-potluck {
             width: 80px;
             height: 80px;
-            display: flex;
-            position: relative;
             margin-right: 10px;
             top: -10px;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-
-            &:hover {
-                transform: rotate(20deg);
-            }
-        }
-
-        &__pot-icon,
-        &__plus-icon {
-            position: absolute;
-
-            path {
-                fill: $brand-secondary;
-            }
-        }
-
-        &__plus-icon {
-            width: 20px;
-            top: 50px;
         }
     }
 }
