@@ -4,10 +4,16 @@ import CopySVG from '../CopySVG';
 
 class Share extends Component {
     componentDidMount() {
-        // eslint-disable-next-line no-undef
-        twttr.widgets.load();
         // eslint-disable-next-line no-undef, no-unused-expressions
-        FB && FB.XFBML && FB.XFBML.parse();
+        if (twttr && twttr.widgets) {
+            // eslint-disable-next-line no-undef, no-unused-expressions
+            twttr.widgets.load();
+        }
+        // eslint-disable-next-line no-undef, no-unused-expressions
+        if (typeof (FB) !== 'undefined' && FB && FB.XFBML) {
+            // eslint-disable-next-line no-undef, no-unused-expressions
+            FB.XFBML.parse();
+        }
     }
     render() {
         const tweetText = encodeURIComponent('Sign up for the potluck!');
