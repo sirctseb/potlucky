@@ -22,6 +22,7 @@ $block-class: 'new-icon';
         &__plus-icon {
             path {
                 fill: $brand-secondary;
+                stroke: darken($brand-secondary, 10%);
             }
         }
 

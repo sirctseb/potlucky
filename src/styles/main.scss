@@ -1,7 +1,7 @@
-$brand-background-color: #fec601;
-$brand-background-color-pale: #feeaa2;
-$brand-primary: #73bfb8;
-$brand-secondary: #ea7317;
+$brand-background-color: #ffda00;
+$brand-background-color-pale: lighten($brand-background-color, 5%);
+$brand-primary: #476bd6;
+$brand-secondary: #ff7f00;
 
 @mixin on-small {
     @media (max-width: 512px) { @content; }
