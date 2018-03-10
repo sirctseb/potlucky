@@ -37,7 +37,7 @@ class Bringing extends Component {
                 }
                 <div className='bringing__nevermind-elaboration'>
                     {
-                        `Nevermind, we don't need this${bringing.bringer && ` (be sure to let ${bringing.bringer} know)`}`
+                        `Nevermind, we don't need this${bringing.bringer ? ` (be sure to let ${bringing.bringer} know)` : ''}`
                     }
                 </div>
             </div>
